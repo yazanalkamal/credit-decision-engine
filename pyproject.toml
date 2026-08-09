@@ -23,6 +23,7 @@ dev = [
     "pytest-cov>=5,<8",
     "ruff>=0.8,<0.16",
     "pre-commit>=4,<5",
+    "kaggle>=2.2.4",
 ]
 
 [build-system]

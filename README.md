@@ -60,8 +60,29 @@ uv run pre-commit install  # enable hooks (once)
 
 ### Data
 
-The dataset is not committed. Download the Home Credit Default Risk CSVs from
-Kaggle and extract them into `data/raw/`.
+The dataset is not committed — `data/` is gitignored and fetched locally.
+
+The canonical source is the [Home Credit Default Risk](https://www.kaggle.com/competitions/home-credit-default-risk)
+Kaggle competition, whose download requires a phone-verified account that has
+accepted the competition rules:
+
+```bash
+kaggle competitions download -c home-credit-default-risk -p data/raw --unzip
+```
+
+If that route is unavailable, the same archive is mirrored publicly on Hugging
+Face with no authentication required:
+
+```bash
+curl -L -C - -o data/raw/home-credit-default-risk.zip \
+  https://huggingface.co/datasets/algcache/HomeCreditDefaultRisk/resolve/main/home-credit-default-risk.zip
+unzip data/raw/home-credit-default-risk.zip -d data/raw
+```
+
+That mirror is what this project used. It is a third-party re-upload, so it was
+verified against the published table shapes and dataset fingerprints before use
+— see [`docs/data.md`](docs/data.md) for the full provenance record and the
+checks performed.
 
 ## License
 
