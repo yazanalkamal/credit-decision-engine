@@ -1,0 +1,15 @@
+# Development happens on Windows, CI runs on Linux. Normalize to LF in the
+# repository so ruff/pre-commit line-ending checks are deterministic on both.
+* text=auto eol=lf
+
+# Binary / generated artifacts: never touch, never diff.
+*.png binary
+*.jpg binary
+*.pdf binary
+*.pkl binary
+*.joblib binary
+*.parquet binary
+uv.lock -diff linguist-generated=true
+
+# Notebooks diff poorly; outputs are stripped by pre-commit anyway.
+*.ipynb -diff linguist-detectable=false

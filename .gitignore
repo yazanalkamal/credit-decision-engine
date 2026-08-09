@@ -1,0 +1,47 @@
+ARCHITECTURE.md
+CLAUDE.md
+PHASES.md
+
+# --- data -------------------------------------------------------------------
+# Home Credit is ~700MB of CSVs and is downloaded, never committed.
+data/
+*.csv
+*.parquet
+*.feather
+
+# --- model artifacts --------------------------------------------------------
+models/
+*.pkl
+*.joblib
+*.onnx
+
+# --- python -----------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+
+# --- tooling caches ---------------------------------------------------------
+.pytest_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+.ipynb_checkpoints/
+
+# --- secrets ----------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# --- editors / OS -----------------------------------------------------------
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
