@@ -8,6 +8,8 @@ data/
 *.csv
 *.parquet
 *.feather
+# ...except small spec tables that are deliverables, not data
+!docs/*.csv
 
 # --- model artifacts --------------------------------------------------------
 models/

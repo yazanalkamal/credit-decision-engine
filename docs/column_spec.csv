@@ -1,0 +1,123 @@
+,dtype,missing_%,levels,bucket,reason
+AMT_ANNUITY,float64,0.0,13672,impute,"0.0% missing, benign"
+AMT_CREDIT,float64,0.0,5603,passthrough,"numeric, complete"
+AMT_GOODS_PRICE,float64,0.09,1002,impute,"0.1% missing, benign"
+AMT_INCOME_TOTAL,float64,0.0,2548,passthrough,"numeric, complete"
+AMT_REQ_CREDIT_BUREAU_DAY,float64,13.5,9,impute+indicator,13.5% missing = no bureau record (thin file)
+AMT_REQ_CREDIT_BUREAU_HOUR,float64,13.5,5,impute+indicator,13.5% missing = no bureau record (thin file)
+AMT_REQ_CREDIT_BUREAU_MON,float64,13.5,24,impute+indicator,13.5% missing = no bureau record (thin file)
+AMT_REQ_CREDIT_BUREAU_QRT,float64,13.5,11,impute+indicator,13.5% missing = no bureau record (thin file)
+AMT_REQ_CREDIT_BUREAU_WEEK,float64,13.5,9,impute+indicator,13.5% missing = no bureau record (thin file)
+AMT_REQ_CREDIT_BUREAU_YEAR,float64,13.5,25,impute+indicator,13.5% missing = no bureau record (thin file)
+APARTMENTS_AVG,float64,50.75,2339,impute+indicator,"building block, one shared missing indicator"
+APARTMENTS_MEDI,float64,50.75,1148,drop,"redundant suffix, r>0.99 with _AVG"
+APARTMENTS_MODE,float64,50.75,760,drop,"redundant suffix, r>0.99 with _AVG"
+BASEMENTAREA_AVG,float64,58.52,3780,impute+indicator,"building block, one shared missing indicator"
+BASEMENTAREA_MEDI,float64,58.52,3772,drop,"redundant suffix, r>0.99 with _AVG"
+BASEMENTAREA_MODE,float64,58.52,3841,drop,"redundant suffix, r>0.99 with _AVG"
+CNT_CHILDREN,int64,0.0,15,passthrough,"numeric, complete"
+CNT_FAM_MEMBERS,float64,0.0,17,impute,"0.0% missing, benign"
+CODE_GENDER,object,0.0,3,encode,XNA (4 rows) -> NaN; leaves F/M
+COMMONAREA_AVG,float64,69.87,3181,impute+indicator,"building block, one shared missing indicator"
+COMMONAREA_MEDI,float64,69.87,3202,drop,"redundant suffix, r>0.99 with _AVG"
+COMMONAREA_MODE,float64,69.87,3128,drop,"redundant suffix, r>0.99 with _AVG"
+DAYS_BIRTH,int64,0.0,17460,passthrough,"no sentinel, no missing"
+DAYS_EMPLOYED,int64,0.0,12574,sentinel-fix,365243 = not employed (18.0%); NaN + indicator
+DAYS_ID_PUBLISH,int64,0.0,6168,passthrough,"no sentinel, no missing"
+DAYS_LAST_PHONE_CHANGE,float64,0.0,3773,passthrough,"no sentinel, no missing"
+DAYS_REGISTRATION,float64,0.0,15688,passthrough,"no sentinel, no missing"
+DEF_30_CNT_SOCIAL_CIRCLE,float64,0.33,10,impute,0.3% missing; window undocumented (eval.md suspect)
+DEF_60_CNT_SOCIAL_CIRCLE,float64,0.33,9,impute,0.3% missing; window undocumented (eval.md suspect)
+ELEVATORS_AVG,float64,53.3,257,impute+indicator,"building block, one shared missing indicator"
+ELEVATORS_MEDI,float64,53.3,46,drop,"redundant suffix, r>0.99 with _AVG"
+ELEVATORS_MODE,float64,53.3,26,drop,"redundant suffix, r>0.99 with _AVG"
+EMERGENCYSTATE_MODE,object,47.4,2,encode,"categorical, 47% missing -> MISSING level"
+ENTRANCES_AVG,float64,50.35,285,impute+indicator,"building block, one shared missing indicator"
+ENTRANCES_MEDI,float64,50.35,46,drop,"redundant suffix, r>0.99 with _AVG"
+ENTRANCES_MODE,float64,50.35,30,drop,"redundant suffix, r>0.99 with _AVG"
+EXT_SOURCE_1,float64,56.38,114584,impute+indicator,"MNAR, absence predicts target"
+EXT_SOURCE_2,float64,0.21,119831,impute,"0.2% missing, no signal in absence"
+EXT_SOURCE_3,float64,19.83,814,impute+indicator,"20% missing, same family as _1"
+FLAG_CONT_MOBILE,int64,0.0,2,passthrough,"numeric, complete"
+FLAG_DOCUMENT_10,int64,0.0,2,drop,7 positive rows < 123
+FLAG_DOCUMENT_11,int64,0.0,2,passthrough,"binary, 1,203 positives"
+FLAG_DOCUMENT_12,int64,0.0,2,drop,2 positive rows < 123
+FLAG_DOCUMENT_13,int64,0.0,2,passthrough,"binary, 1,084 positives"
+FLAG_DOCUMENT_14,int64,0.0,2,passthrough,"binary, 903 positives"
+FLAG_DOCUMENT_15,int64,0.0,2,passthrough,"binary, 372 positives"
+FLAG_DOCUMENT_16,int64,0.0,2,passthrough,"binary, 3,053 positives"
+FLAG_DOCUMENT_17,int64,0.0,2,drop,82 positive rows < 123
+FLAG_DOCUMENT_18,int64,0.0,2,passthrough,"binary, 2,500 positives"
+FLAG_DOCUMENT_19,int64,0.0,2,passthrough,"binary, 183 positives"
+FLAG_DOCUMENT_2,int64,0.0,2,drop,13 positive rows < 123
+FLAG_DOCUMENT_20,int64,0.0,2,passthrough,"binary, 156 positives"
+FLAG_DOCUMENT_21,int64,0.0,2,drop,103 positive rows < 123
+FLAG_DOCUMENT_3,int64,0.0,2,passthrough,"binary, 218,340 positives"
+FLAG_DOCUMENT_4,int64,0.0,2,drop,25 positive rows < 123
+FLAG_DOCUMENT_5,int64,0.0,2,passthrough,"binary, 4,648 positives"
+FLAG_DOCUMENT_6,int64,0.0,2,passthrough,"binary, 27,078 positives"
+FLAG_DOCUMENT_7,int64,0.0,2,drop,59 positive rows < 123
+FLAG_DOCUMENT_8,int64,0.0,2,passthrough,"binary, 25,024 positives"
+FLAG_DOCUMENT_9,int64,0.0,2,passthrough,"binary, 1,198 positives"
+FLAG_EMAIL,int64,0.0,2,passthrough,"numeric, complete"
+FLAG_EMP_PHONE,int64,0.0,2,passthrough,"numeric, complete"
+FLAG_MOBIL,int64,0.0,2,drop,"constant: 1 in 307,510 rows"
+FLAG_OWN_CAR,object,0.0,2,encode,2 levels
+FLAG_OWN_REALTY,object,0.0,2,encode,2 levels
+FLAG_PHONE,int64,0.0,2,passthrough,"numeric, complete"
+FLAG_WORK_PHONE,int64,0.0,2,passthrough,"numeric, complete"
+FLOORSMAX_AVG,float64,49.76,403,impute+indicator,"building block, one shared missing indicator"
+FLOORSMAX_MEDI,float64,49.76,49,drop,"redundant suffix, r>0.99 with _AVG"
+FLOORSMAX_MODE,float64,49.76,25,drop,"redundant suffix, r>0.99 with _AVG"
+FLOORSMIN_AVG,float64,67.85,305,impute+indicator,"building block, one shared missing indicator"
+FLOORSMIN_MEDI,float64,67.85,47,drop,"redundant suffix, r>0.99 with _AVG"
+FLOORSMIN_MODE,float64,67.85,25,drop,"redundant suffix, r>0.99 with _AVG"
+FONDKAPREMONT_MODE,object,68.39,4,encode,"categorical, 68% missing -> MISSING level"
+HOUR_APPR_PROCESS_START,int64,0.0,24,passthrough,"0-23 int, ordinal enough"
+HOUSETYPE_MODE,object,50.18,3,encode,"categorical, 50% missing -> MISSING level"
+LANDAREA_AVG,float64,59.38,3527,impute+indicator,"building block, one shared missing indicator"
+LANDAREA_MEDI,float64,59.38,3560,drop,"redundant suffix, r>0.99 with _AVG"
+LANDAREA_MODE,float64,59.38,3563,drop,"redundant suffix, r>0.99 with _AVG"
+LIVE_CITY_NOT_WORK_CITY,int64,0.0,2,passthrough,"numeric, complete"
+LIVE_REGION_NOT_WORK_REGION,int64,0.0,2,passthrough,"numeric, complete"
+LIVINGAPARTMENTS_AVG,float64,68.35,1868,impute+indicator,"building block, one shared missing indicator"
+LIVINGAPARTMENTS_MEDI,float64,68.35,1097,drop,"redundant suffix, r>0.99 with _AVG"
+LIVINGAPARTMENTS_MODE,float64,68.35,736,drop,"redundant suffix, r>0.99 with _AVG"
+LIVINGAREA_AVG,float64,50.19,5199,impute+indicator,"building block, one shared missing indicator"
+LIVINGAREA_MEDI,float64,50.19,5281,drop,"redundant suffix, r>0.99 with _AVG"
+LIVINGAREA_MODE,float64,50.19,5301,drop,"redundant suffix, r>0.99 with _AVG"
+NAME_CONTRACT_TYPE,object,0.0,2,encode,2 levels
+NAME_EDUCATION_TYPE,object,0.0,5,encode,5 levels
+NAME_FAMILY_STATUS,object,0.0,6,encode,6 levels
+NAME_HOUSING_TYPE,object,0.0,6,encode,6 levels
+NAME_INCOME_TYPE,object,0.0,8,encode,8 levels
+NAME_TYPE_SUITE,object,0.42,7,encode,7 levels
+NONLIVINGAPARTMENTS_AVG,float64,69.43,386,impute+indicator,"building block, one shared missing indicator"
+NONLIVINGAPARTMENTS_MEDI,float64,69.43,214,drop,"redundant suffix, r>0.99 with _AVG"
+NONLIVINGAPARTMENTS_MODE,float64,69.43,167,drop,"redundant suffix, r>0.99 with _AVG"
+NONLIVINGAREA_AVG,float64,55.18,3290,impute+indicator,"building block, one shared missing indicator"
+NONLIVINGAREA_MEDI,float64,55.18,3323,drop,"redundant suffix, r>0.99 with _AVG"
+NONLIVINGAREA_MODE,float64,55.18,3327,drop,"redundant suffix, r>0.99 with _AVG"
+OBS_30_CNT_SOCIAL_CIRCLE,float64,0.33,33,impute,0.3% missing; window undocumented (eval.md suspect)
+OBS_60_CNT_SOCIAL_CIRCLE,float64,0.33,33,impute,0.3% missing; window undocumented (eval.md suspect)
+OCCUPATION_TYPE,object,31.35,18,encode,"31% missing, 6.5% vs 8.8% default -> MISSING is a level"
+ORGANIZATION_TYPE,object,0.0,58,encode,"58 levels, needs grouping before one-hot"
+OWN_CAR_AGE,float64,65.99,62,impute+indicator,"66% missing = no car, mirrors FLAG_OWN_CAR"
+REGION_POPULATION_RELATIVE,float64,0.0,81,passthrough,"numeric, complete"
+REGION_RATING_CLIENT,int64,0.0,3,passthrough,"numeric, complete"
+REGION_RATING_CLIENT_W_CITY,int64,0.0,3,passthrough,"numeric, complete"
+REG_CITY_NOT_LIVE_CITY,int64,0.0,2,passthrough,"numeric, complete"
+REG_CITY_NOT_WORK_CITY,int64,0.0,2,passthrough,"numeric, complete"
+REG_REGION_NOT_LIVE_REGION,int64,0.0,2,passthrough,"numeric, complete"
+REG_REGION_NOT_WORK_REGION,int64,0.0,2,passthrough,"numeric, complete"
+SK_ID_CURR,int64,0.0,307511,drop,"identifier, not a feature"
+TARGET,int64,0.0,2,target,the label
+TOTALAREA_MODE,float64,48.27,5116,impute+indicator,"building block, one shared missing indicator"
+WALLSMATERIAL_MODE,object,50.84,7,encode,"categorical, 51% missing -> MISSING level"
+WEEKDAY_APPR_PROCESS_START,object,0.0,7,encode,7 levels
+YEARS_BEGINEXPLUATATION_AVG,float64,48.78,285,impute+indicator,"building block, one shared missing indicator"
+YEARS_BEGINEXPLUATATION_MEDI,float64,48.78,245,drop,"redundant suffix, r>0.99 with _AVG"
+YEARS_BEGINEXPLUATATION_MODE,float64,48.78,221,drop,"redundant suffix, r>0.99 with _AVG"
+YEARS_BUILD_AVG,float64,66.5,149,impute+indicator,"building block, one shared missing indicator"
+YEARS_BUILD_MEDI,float64,66.5,151,drop,"redundant suffix, r>0.99 with _AVG"
+YEARS_BUILD_MODE,float64,66.5,154,drop,"redundant suffix, r>0.99 with _AVG"
